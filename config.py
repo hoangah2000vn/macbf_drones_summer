@@ -1,8 +1,6 @@
 import sys
 sys.dont_write_bytecode = True
 
-g = 9.851 #gravitational constant
-
 A_MAT = [[0, 0, 0, 0],
          [0, 0, 0, 0],
          [0, 0, 0, 0],
@@ -32,7 +30,7 @@ DIST_TOLERATE = 0.7
 ALPHA_CBF = 1.0
 WEIGHT_DECAY = 1e-8
 
-TRAIN_STEPS = 70000
+TRAIN_STEPS = 20000
 EVALUATE_STEPS = 5
 INNER_LOOPS = 40
 INNER_LOOPS_EVAL = 40
