@@ -1,4 +1,4 @@
-## Learning Safe Multi-Agent Control with Decentralized Neural Barrier Certificates
+## Learning Safe Multi-Agent Control with Decentralized Neural Barrier Certificates (with Crazyflie dynamics)
 
 [Zengyi Qin](http://www.qinzy.tech/), [Kaiqing Zhang](https://kzhang66.github.io/), [Yuxiao Chen](http://www.its.caltech.edu/~chenyx/), [Jingkai Chen](https://jkchengh.github.io/), [Chuchu Fan](https://chuchu.mit.edu/)
 
