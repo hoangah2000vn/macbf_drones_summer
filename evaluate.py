@@ -203,7 +203,7 @@ def main():
         scene.reset()
         start_time = time.time()
         s_np = np.concatenate(
-            [scene.start_points, np.zeros((args.num_agents, 5))], axis=1)
+            [scene.start_points, np.zeros((args.num_agents, 1))], axis=1)
         s_traj = []
         safety_info = np.zeros(args.num_agents, dtype=np.float32)
         # a scene has a sequence of goal states for each agent. in each scene.step,
@@ -211,7 +211,7 @@ def main():
         for t in range(scene.steps):
             # the goal states
             s_ref_np = np.concatenate(
-                [scene.waypoints[t], np.zeros((args.num_agents, 5))], axis=1)
+                [scene.waypoints[t], np.zeros((args.num_agents, 1))], axis=1)
             # run INNER_LOOPS_EVAL steps to reach the goal state
             for i in range(config.INNER_LOOPS_EVAL):
                 u_np, acc_list_np = sess.run(
@@ -245,11 +245,11 @@ def main():
 
         # reach the same goals using LQR controller without considering the collision
         s_np = np.concatenate(
-            [scene.start_points, np.zeros((args.num_agents, 5))], axis=1)
+            [scene.start_points, np.zeros((args.num_agents, 1))], axis=1)
         s_traj = []
         for t in range(scene.steps):
             s_ref_np = np.concatenate(
-                [scene.waypoints[t], np.zeros((args.num_agents, 5))], axis=1)
+                [scene.waypoints[t], np.zeros((args.num_agents, 1))], axis=1)
             for i in range(config.INNER_LOOPS_EVAL):
                 u_np = core.quadrotor_controller_np(s_np, s_ref_np)
                 dsdt = core.quadrotor_dynamics_np(s_np, u_np)
